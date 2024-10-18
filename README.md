@@ -46,7 +46,7 @@ pip install psycopg2 numpy scipy matplotlib
 git clone https://github.com/thiago-ribeiro1/Relatorios-Estatisticos.git
 ```
 
-2. Configure o banco de dados PostgreSQL. Crie a base de dados, e a tabela `pesquisasatisfacao` com as colunas `nota` e `num_usuarios`.
+2. Configure o banco de dados PostgreSQL. Crie a base de dados `estatisticas`, e a tabela `pesquisasatisfacao` com as colunas `nota` e `num_usuarios`.
 
 ```sql
 create database estatisticas;
