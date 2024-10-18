@@ -79,5 +79,6 @@ def connect_db():
 ```bash
 python main.py
 ```
+## Visualização dos gráficos
 
 ![medidas](https://github.com/user-attachments/assets/31557d61-8783-4a7c-b819-bc574f3866ab)
