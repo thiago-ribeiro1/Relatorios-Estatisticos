@@ -49,6 +49,8 @@ git clone https://github.com/thiago-ribeiro1/Relatorios-Estatisticos.git
 2. Configure o banco de dados PostgreSQL. Crie a tabela `pesquisasatisfacao` com as colunas `nota` e `num_usuarios`.
 
 ```sql
+create database estatisticas;
+
 create table pesquisasatisfacao (
     id SERIAL PRIMARY KEY,
     nota INTEGER NOT NULL CHECK (nota >= 0 AND nota <= 10)        
