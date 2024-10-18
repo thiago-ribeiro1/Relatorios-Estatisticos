@@ -1,15 +1,13 @@
 
-# SatisMetrics 📊
-
-![SatisMetrics Logo](https://via.placeholder.com/200x100.png) <!-- Placeholder for logo, replace with actual if needed -->
+# Relatórios Estatísticos 📊
 
 ## 📝 Resumo
 
-**SatisMetrics** é uma aplicação voltada para a análise estatística de dados de satisfação de usuários, utilizando um banco de dados PostgreSQL. O objetivo principal é calcular e visualizar as principais medidas de posição e dispersão dos dados de uma pesquisa de satisfação. A aplicação calcula métricas como média, mediana, moda, variância, desvio padrão e coeficiente de variação. Além disso, fornece gráficos para facilitar a interpretação dos resultados.
+Aplicação voltada para a análise estatística de dados de satisfação de usuários, utilizando um banco de dados PostgreSQL. O objetivo principal é calcular e visualizar as principais medidas de posição e dispersão dos dados de uma pesquisa de satisfação. A aplicação calcula métricas como média, mediana, moda, variância, desvio padrão e coeficiente de variação. Além disso, fornece gráficos para facilitar a interpretação dos resultados.
 
 ## 🚀 Funcionalidades
 
-- 🔗 Conexão com o banco de dados PostgreSQL para buscar dados de satisfação.
+- 🔗 Conexão com o banco de dados PostgreSQL para buscar dados de satisfação de usuários.
 - 📐 Cálculo das principais medidas estatísticas:
   - 📊 **Média**
   - 🔄 **Mediana**
@@ -18,7 +16,6 @@
   - 📏 **Desvio padrão (populacional)**
   - 📉 **Coeficiente de variação**
 - 📊 Visualização de dados por meio de gráficos com `matplotlib`.
-- 👥 Análise tanto das notas quanto do número de usuários que participaram da pesquisa.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -46,17 +43,16 @@ pip install psycopg2 numpy scipy matplotlib
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/SatisMetrics.git
-cd SatisMetrics
+git clone https://github.com/thiago-ribeiro1/Relatorios-Estatisticos.git
 ```
 
 2. Configure o banco de dados PostgreSQL. Crie a tabela `pesquisasatisfacao` com as colunas `nota` e `num_usuarios`.
 
 ```sql
-CREATE TABLE pesquisasatisfacao (
+create table pesquisasatisfacao (
     id SERIAL PRIMARY KEY,
-    nota INTEGER NOT NULL,
-    num_usuarios INTEGER NOT NULL
+    nota INTEGER NOT NULL CHECK (nota >= 0 AND nota <= 10)        
+    num_usuarios INTEGER NOT NULL CHECK (num_usuarios > 0) -- Número de usuários que participaram da pesquisa
 );
 ```
 
@@ -84,26 +80,4 @@ def connect_db():
 python main.py
 ```
 
-## 📊 Como Usar
-
-1. Execute o script e ele buscará os dados do banco de dados, calculando as estatísticas.
-2. No terminal, você verá a saída com a média, mediana, moda, variância e desvio padrão.
-3. Gráficos serão exibidos visualmente para mostrar a distribuição e os dados estatísticos.
-
-## 📈 Exemplos de Gráficos
-
-### Gráfico de Distribuição de Notas
-![Distribuição de Notas](https://via.placeholder.com/500x300.png) <!-- Placeholder, replace with actual image -->
-
-### Gráfico de Estatísticas
-![Estatísticas](https://via.placeholder.com/500x300.png) <!-- Placeholder, replace with actual image -->
-
-## 🔮 Futuras Melhorias
-
-- 🖥️ Adicionar uma interface gráfica (GUI) para facilitar a interação.
-- 🔍 Mais opções de filtragem e análise de dados.
-- 🌐 Suporte a outros bancos de dados além de PostgreSQL.
-
-## 🤝 Contribuições
-
-Contribuições são bem-vindas! Abra uma issue ou envie um pull request se desejar colaborar.
+![medidas](https://github.com/user-attachments/assets/31557d61-8783-4a7c-b819-bc574f3866ab)
