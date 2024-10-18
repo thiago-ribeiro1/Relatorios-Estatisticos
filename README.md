@@ -56,7 +56,24 @@ create table pesquisasatisfacao (
 );
 ```
 
-3. Configure a conexão com o banco de dados no código Python:
+3. Insira os valores na tabela:
+
+```sql
+INSERT INTO pesquisasatisfacao (nota, num_usuarios)
+VALUES
+    (10, 5),   -- 5 usuários deram nota 10
+    (9, 10),   -- 10 usuários deram nota 9
+    (8, 8),    -- 8 usuários deram nota 8
+    (7, 12),   -- 12 usuários deram nota 7
+    (6, 7),    -- 7 usuários deram nota 6
+    (5, 9),    -- 9 usuários deram nota 5
+    (4, 8),    -- 8 usuários deram nota 4
+    (3, 4),    -- 4 usuários deram nota 3
+    (2, 3),    -- 3 usuários deram nota 2
+    (1, 2);    -- 2 usuários deram nota 1
+```
+
+4. Configure a conexão com o banco de dados no código Python:
 
 ```python
 def connect_db():
@@ -74,7 +91,7 @@ def connect_db():
         return None
 ```
 
-4. Execute o script principal:
+5. Execute o script principal:
 
 ```bash
 python main.py
